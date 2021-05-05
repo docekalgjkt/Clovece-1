@@ -1,3 +1,5 @@
+package model;
+
 public class Figurka {
 
     private BarvaFigurky barvaFigurky;

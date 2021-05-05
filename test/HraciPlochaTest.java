@@ -1,3 +1,6 @@
+import model.BarvaFigurky;
+import model.Figurka;
+import model.HraciPlocha;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

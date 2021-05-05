@@ -1,7 +1,8 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.ArrayList;
 import java.util.List;
 
 public class HraciPlocha {
@@ -30,7 +31,7 @@ public class HraciPlocha {
 
     }
     //Nasazení figurky na správné místo
-    //public void nasad(BarvaFigurky barvaFigurky){}
+    //public void nasad(model.BarvaFigurky barvaFigurky){}
 
     public int nasad(Figurka figurka){
         int nasazeni=figurka.getBarvaFigurky().getStart();

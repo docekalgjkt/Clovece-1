@@ -1,3 +1,6 @@
+import model.BarvaFigurky;
+import model.Figurka;
+import model.StartovniDomecek;
 import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;

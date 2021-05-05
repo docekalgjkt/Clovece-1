@@ -1,6 +1,8 @@
+import model.BarvaFigurky;
+import model.CilovyDomecek;
+import model.Figurka;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
