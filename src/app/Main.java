@@ -13,7 +13,6 @@ public class Main {
         int figurky = 4;
         int pole = 8;
         int hraci = 4;
-
     }
     public static int hod() {
         Random generator = new Random();

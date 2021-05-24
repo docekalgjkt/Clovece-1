@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainFXController">
+   <children>
+      <Canvas fx:id="platno" height="372.0" layoutX="14.0" layoutY="14.0" width="480.0" />
+      <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#kresli" text="Button" />
+   </children>
+</AnchorPane>

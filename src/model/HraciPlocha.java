@@ -65,7 +65,7 @@ public class HraciPlocha {
     //Zjištění, se kterými figurkami může hráč hrát
     public List<Figurka> vratMozneFigurky(BarvaFigurky barvaFigurky, int pocetPoli){
         List<Figurka> figurky = new ArrayList<>();
-        for(Figurka f : hraciPole){
+        for(Figurka f : hraciPole){ //při každém průchodu (pro každý prvek projít)
             if ((f.getBarvaFigurky()==barvaFigurky)&&(muzuPohyb(f,pocetPoli))) figurky.add(f);
         }
         return null;
