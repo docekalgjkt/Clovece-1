@@ -13,7 +13,10 @@
       <AnchorPane layoutX="16.0" layoutY="16.0" prefHeight="568.0" prefWidth="571.0" style="-fx-background-color: lightgray;">
          <children>
             <Canvas fx:id="platno" height="455.0" layoutX="47.0" layoutY="58.0" style="-fx-background-color: blue;" width="488.0" />
-            <AnchorPane layoutX="251.0" layoutY="244.0" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: lightblue;" />
+            <AnchorPane layoutX="251.0" layoutY="244.0" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: lightblue;">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: lightblue;" />
+               </children></AnchorPane>
          </children>
       </AnchorPane>
       <Button layoutX="10.0" layoutY="570.0" mnemonicParsing="false" onAction="#kresli" text="Hod" />
