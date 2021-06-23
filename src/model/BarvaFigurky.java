@@ -1,3 +1,5 @@
+package model;
+
 import java.awt.*;
 
 public class BarvaFigurky {
@@ -5,7 +7,7 @@ public class BarvaFigurky {
     int start;
     int cil;
 
-    BarvaFigurky(int start, int pocetPoli){
+    public BarvaFigurky(int start, int pocetPoli){
         this.start = start;
         int cil = start - 1;
         if (start==0) {cil = pocetPoli - 1;}
