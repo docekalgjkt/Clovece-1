@@ -7,7 +7,7 @@ public class StartovniDomecek {
     private LinkedList<Figurka> figurky = new LinkedList<>();
 
     public StartovniDomecek(int pocet, BarvaFigurky barvaFigurky){
-        for(int i=0;i<pocet;i++){
+        for(int i=0;i<=pocet;i++){
             figurky.addFirst(new Figurka(barvaFigurky));
         }
     }
@@ -31,7 +31,7 @@ public class StartovniDomecek {
         return figurky.size();
     }
 
-    public String toString(){
+    /*public String toString(){
         String dom ="";
         int b = 1;
         for(int a=0; a < figurky.size(); a++){
@@ -43,6 +43,6 @@ public class StartovniDomecek {
             }
         }
         return dom;
-    }
+    }*/
 
 }
