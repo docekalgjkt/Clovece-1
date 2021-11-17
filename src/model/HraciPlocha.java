@@ -32,7 +32,7 @@ public class HraciPlocha {
     //public void nasad(model.BarvaFigurky barvaFigurky){}
 
         public static int[] indexPole(int x){
-        int[] sX = {19,69,119,169,219,219,219,219,219,269,319,319,319,319,319,369,419,469,519,569,569,569,519,469,419,369,319,319,319,319,319,269,219,219,219,219,219,169,119,69,19};
+        int[] sX = {19,69,119,169,219,219,219,219,219,269,319,319,319,319,319,369,419,469,519,519,519,469,419,369,319,319,319,319,319,269,219,219,219,219,219,169,119,69,19,19};
         int[] sY = {215,215,215,215,215,165,115,65,15,15,15,65,115,165,215,215,215,215,215,265,315,315,315,315,315,365,415,465,515,515,515,465,415,365,315,315,315,315,315,265};
         int[] souradnice = new int [2];
         souradnice[0] = sX[x];
@@ -45,6 +45,7 @@ public class HraciPlocha {
         int a = generator.nextInt(6) + 1;
         return a;
     }
+
 
     public int nasad(Figurka figurka){
         int nasazeni=figurka.getBarvaFigurky().getStart();
