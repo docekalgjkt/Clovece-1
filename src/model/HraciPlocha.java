@@ -40,6 +40,15 @@ public class HraciPlocha {
         return souradnice;
     }
 
+    public static double[] indexDomecku(int x){
+        int[] dX = {35,535,535,35};
+        int[] dY = {33,33,533,533};
+        double[] souradnice = new double [2];
+        souradnice[0] = dX[x];
+        souradnice[1] = dY[x];
+        return souradnice;
+    }
+
     public static int hod() {
         Random generator = new Random();
         int a = generator.nextInt(6) + 1;
