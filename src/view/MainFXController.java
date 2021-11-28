@@ -10,6 +10,7 @@ import javafx.scene.text.Font;
 import model.HraciPlocha;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 public class MainFXController {
@@ -23,7 +24,7 @@ public class MainFXController {
     LinkedList<Circle> figZ = new LinkedList<>();
 
 
-    /*public void figurky(){
+    public void figurky(){
         for(int x = 0; x < 4; x++){
             for(int y = 0; y < 200; y += 50){
                 Circle kol = new Circle();
@@ -35,7 +36,7 @@ public class MainFXController {
                 plocha.getChildren().add(kol);
             }
         }
-    }*/
+    }
 
 
     public void kresli(){
@@ -75,6 +76,22 @@ public class MainFXController {
         platno.getGraphicsContext2D().fillOval(219,515,30,30);
         for(int i = 315; i < 500; i += 50){
             platno.getGraphicsContext2D().fillOval(268, i, 30, 30);
+        }
+
+        //FIGURKY
+        LinkedList<Color> barvy = new LinkedList<>();
+        barvy.add(Color.BLUE);
+        barvy.add(Color.GREEN);
+        barvy.add(Color.RED);
+        barvy.add(Color.YELLOW);
+        for(int x = 0; x < 4; x++){
+                Circle kol = new Circle();
+                kol.setFill(barvy.get(x));
+                kol.setRadius(15);
+                figZ.add(kol);
+                plocha.getChildren().add(kol);
+                kol.setLayoutX(HraciPlocha.indexDomecku(x)[0]);
+                kol.setLayoutY(HraciPlocha.indexDomecku(x)[1]);
         }
     }
 
