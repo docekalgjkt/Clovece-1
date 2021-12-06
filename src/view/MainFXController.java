@@ -28,6 +28,9 @@ public class MainFXController {
     LinkedList<Circle> figZ = new LinkedList<>();
     LinkedList<Color> barvy = new LinkedList<>();
     Circle fig;
+    int[][] indexy = new int[2][1];
+    int hod;
+
 
 
     public void figurky(){
@@ -45,6 +48,7 @@ public class MainFXController {
     }
 
 
+
     public void kresli(){
         platno.getGraphicsContext2D().fillRect(100,100,100,20);
     }
@@ -58,11 +62,11 @@ public class MainFXController {
 
 
         int b = 50;
-        platno.getGraphicsContext2D().setFill(Color.GRAY);
+        platno.getGraphicsContext2D().setFill(Color.MEDIUMPURPLE);
         for(int d=0;d<40;d++){
             platno.getGraphicsContext2D().fillOval(HraciPlocha.indexPole(d)[0],HraciPlocha.indexPole(d)[1],30,30);
         }
-        platno.getGraphicsContext2D().setFill(Color.BLACK); //startovni policka
+        platno.getGraphicsContext2D().setFill(Color.PURPLE); //startovni policka
         platno.getGraphicsContext2D().fillOval(19,215,30,30);
         platno.getGraphicsContext2D().fillOval(519,316,30,30);
         platno.getGraphicsContext2D().fillOval(319,15,30,30);
@@ -77,19 +81,16 @@ public class MainFXController {
 
 
         platno.getGraphicsContext2D().setFill(Color.RED); //prava
-        platno.getGraphicsContext2D().fillOval(519,316,30,30);
         for(int i = 319; i < 500; i += 50){
             platno.getGraphicsContext2D().fillOval(i, 265, 30, 30);
         }
 
         platno.getGraphicsContext2D().setFill(Color.GREEN); //horni
-        platno.getGraphicsContext2D().fillOval(319,15,30,30);
         for(int i = 65; i < 250; i += 50){
             platno.getGraphicsContext2D().fillOval(268, i, 30, 30);
         }
 
         platno.getGraphicsContext2D().setFill(Color.YELLOW); //dolni
-        platno.getGraphicsContext2D().fillOval(219,515,30,30);
         for(int i = 315; i < 500; i += 50){
             platno.getGraphicsContext2D().fillOval(268, i, 30, 30);
         }
@@ -103,7 +104,7 @@ public class MainFXController {
 
 
         //FIGURKY
-                for(int x = 0; x < 4; x++){
+        for(int x = 0; x < 4; x++){
             Circle kol = new Circle();
             kol.setFill(barvy.get(x));
             kol.setRadius(15);
@@ -115,7 +116,8 @@ public class MainFXController {
                 @Override
                 public void handle(MouseEvent mouseEvent) {
                     fig = kol;
-                    nasadFig();
+                    indexy[0][0] = (int)kol.getLayoutX();
+                    indexy[1][0] = (int)kol.getLayoutY();
                 }
             });
         }
@@ -145,12 +147,34 @@ public class MainFXController {
         else {
             fig.setLayoutX(HraciPlocha.indexPole(30)[0]);
             fig.setLayoutY(HraciPlocha.indexPole(30)[1]);
-            }
+        }
+        Circle kol = new Circle();
+        kol.setFill(Color.PURPLE);
+        kol.setRadius(15);
+        plocha.getChildren().add(kol);
+
+    }
+
+    public void posunFig(){
+        int x = 0;
+        while(indexy[0][0] != HraciPlocha.indexPole(x)[0] && indexy[1][0] != HraciPlocha.indexPole(x)[1]){
+            x++;
+        }
+        int y = x-1;
+        int kamIndex;
+        if(y+hod < 40){
+            kamIndex = y+hod;
+        }
+        else{
+            kamIndex = y+hod - 40;
+        }
+        fig.setLayoutX(HraciPlocha.indexPole(kamIndex)[0]);
+        fig.setLayoutY(HraciPlocha.indexPole(kamIndex)[1]);
     }
 
     public void hod(){
-        int a = HraciPlocha.hod();
-        String b = Integer.toString(a);
+        hod = HraciPlocha.hod();
+        String b = Integer.toString(hod);
         platno.getGraphicsContext2D().setFill(Color.LIGHTPINK);
         platno.getGraphicsContext2D().fillRect(263,258,40,40);
         platno.getGraphicsContext2D().setFont(Font.font(40));
