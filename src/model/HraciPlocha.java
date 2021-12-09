@@ -1,9 +1,6 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
+import java.util.*;
 
 public class HraciPlocha {
 
@@ -11,6 +8,7 @@ public class HraciPlocha {
     private Map<BarvaFigurky, CilovyDomecek> cilovyDomecekMap = new HashMap<>();
     private Map<BarvaFigurky, Figurka> nasazeneFigurky = new HashMap<>();
     private List<Figurka> hraciPole = new ArrayList<>();
+
 
     public HraciPlocha(int pocetHracu, int pocetFigurek, int pocetMeziPoli){
 
@@ -32,6 +30,31 @@ public class HraciPlocha {
     }
     //Nasazení figurky na správné místo
     //public void nasad(model.BarvaFigurky barvaFigurky){}
+
+        public static int[] indexPole(int x){
+        int[] sX = {19,69,119,169,219,219,219,219,219,269,319,319,319,319,319,369,419,469,519,519,519,469,419,369,319,319,319,319,319,269,219,219,219,219,219,169,119,69,19,19};
+        int[] sY = {215,215,215,215,215,165,115,65,15,15,15,65,115,165,215,215,215,215,215,265,315,315,315,315,315,365,415,465,515,515,515,465,415,365,315,315,315,315,315,265};
+        int[] souradnice = new int [2];
+        souradnice[0] = sX[x];
+        souradnice[1] = sY[x];
+        return souradnice;
+    }
+
+    public static double[] indexDomecku(int x){
+        int[] dX = {35,535,535,35};
+        int[] dY = {33,33,533,533};
+        double[] souradnice = new double [2];
+        souradnice[0] = dX[x];
+        souradnice[1] = dY[x];
+        return souradnice;
+    }
+
+    public static int hod() {
+        Random generator = new Random();
+        int a = generator.nextInt(6) + 1;
+        return a;
+    }
+
 
     public int nasad(Figurka figurka){
         int nasazeni=figurka.getBarvaFigurky().getStart();
